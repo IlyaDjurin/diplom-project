@@ -3,7 +3,7 @@ from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey
 from sqlalchemy.orm import relationship,scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine('sqlite:///blog.sqlite')
+engine = create_engine('sqlite:///internet_magaz.sqlite')
 
 db_session = scoped_session(sessionmaker(bind=engine))
 
@@ -16,7 +16,7 @@ class Kategor(Base):
     kategory_name = Column(String(75))
     kategory_info = Column(String(70))
     kategory_image = Column(String(120))
-    posts = relationship('Tovar', backref='author')
+    posts = relationship('Tovar', backref='kategorii')
 
     def __init__(self, kategory_name=None, kategory_info=None, kategory_image=None):
         self.kategory_name = kategory_name
@@ -33,15 +33,16 @@ class Tovar(Base):
     tovar_info = Column(String(70))
     tovar_image = Column(String(120))
     tovar_made = Column(String(70))
-    tovar_price = Column(Integer(70))
+    tovar_price = Column(Integer)
     kategory_id = Column(Integer, ForeignKey('kategorii.id'))
 
-    def __init__(self, tovar_name=None, tovar_info=None, tovar_image=None,tovar_made=None,tovar_price=None):
+    def __init__(self, tovar_name=None, tovar_info=None, tovar_image=None,tovar_made=None,tovar_price=None,kategory_id = None):
         self.tovar_name = tovar_name
         self.tovar_info = tovar_info
         self.tovar_image = tovar_image
         self.tovar_made = tovar_made
         self.tovar_price = tovar_price
+        self.kategory_id = kategory_id
 
     def __repr__(self):
         return '<Tovar {} {}>'.format(self.tovar_name, self.tovar_info)
