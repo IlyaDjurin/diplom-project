@@ -56,8 +56,15 @@
         </div>
         <button type="submit" class="btn btn-default">Отправить</button>
       </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Контакты</a></li>
+      <form class="navbar-form navbar-right" method="POST" action="/login/">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Email" name = "email">
+          <div class="form-group">
+          <input type="password" class="form-control" placeholder="Пароль" name = "passwd">
+        </div>
+        <button type="submit" class="btn btn-default">Личный кабинет</button>
+      </form>
+     
         
         </li>
       </ul>
