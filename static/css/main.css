@@ -1,6 +1,7 @@
-h1{
+.page-header{
 	color: red;
 	font-size: 44px;
+	padding: 30px;
 }
 p{
 	font-size: 16px;
