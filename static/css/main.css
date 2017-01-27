@@ -1,9 +1,10 @@
-.page-header{
-	color: red;
-	font-size: 44px;
-	padding: 30px;
+
+.carousel-inner {
+	padding-right: 1px
+	padding-left: 1px
+	width: 970px;
 }
-p{
-	font-size: 16px;
-	font-size: Arial;
+.container {
+    width: 970px;
 }
+

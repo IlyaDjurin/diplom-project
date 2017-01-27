@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/main.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,66 +19,24 @@
     <![endif]-->
   </head>
   <body>
-	<nav class="navbar navbar-inverse" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-
-      </button>
-      <a class="navbar-brand" href="#">Газетка</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/inf/">Информация о сайте</a></li>
-        <li><a href="#">Просто кнопка</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Товары <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Смартфоны</a></li>
-            <li><a href="#">Бытовая техника</a></li>
-            <li><a href="#">Автотовары</a></li>
-            <li><a href="#">Просто кнопка</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Прочее</a></li>
-            
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Поиск">
-        </div>
-        <button type="submit" class="btn btn-default">Отправить</button>
-      </form>
-      <form class="navbar-form navbar-right" method="POST" action="/login/">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Email" name = "email">
-
-          <div class="form-group">
-          <input type="password" class="form-control" placeholder="Пароль" name = "passwd">
-        </div>
-        <button type="submit" class="btn btn-default">Личный кабинет</button>
-      </form>
-     
-        
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+{% include "navigation.html" %}
 <div class="container">
   <div class="page-header">
-    <h1 padding: 30px >  Привет от нашей газетки! <small>Всегда рады видеть вас на нашем сайте</small></h1>
+    <h1> Интерент-магазин Газетка! <small>Всегда рады видеть вас на нашем сайте</small></h1>
   </div>
-</div>\ 
-   
+</div>
+
+<div class="container">
+	{% include "slider.html" ignore missing %}
+</div>
+
+
+<div class="container">
+ <div class="footer">
+        <p>&copy; lyaDjurin 2017</p>
+      </div>
+      </div>
+ 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

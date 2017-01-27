@@ -8,7 +8,11 @@ def index():
 
 @my_flask_app.route('/inf/')
 def info():
-	return render_template('info_gl_str.html')	
+	return render_template('info_gl_str.html')
+
+@my_flask_app.route('/log1/')
+def log1():
+	return render_template('login_menu.html')	
 
 @my_flask_app.route('/login/',methods = ['POST'])
 def login():
