@@ -8,3 +8,7 @@
     width: 970px;
 }
 
+.navbar-inverse{
+	background-color: #551A8B;
+	border-color: #778899;
+}
