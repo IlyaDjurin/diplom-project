@@ -1,21 +1,26 @@
 {% extends "index.html" %}
 
 {% block title %}Login{% endblock %}
-
-{% block content %}
+{% block inf_gl_s %}
+{% block content %}{% endblock %}
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12"></div>
+        <div class="col-md-4"></div>
+         <div class="col-md-4">
+        
+
 
       <form class="form-signin" role="form" method="POST" action="/login/">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Пожалуйста войдите</h2>
         <input type="text" class="form-control input-sm" placeholder="Email" name = "email">
         <input type="password" class="form-control input-sm" placeholder="Пароль" name = "passwd">
         <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
+          <input type="checkbox" value="remember-me"> Запомнить меня
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Вход</button>
       </form>
+      </div>
       </div>
       </div>
 

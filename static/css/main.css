@@ -1,14 +1,16 @@
 
-.carousel-inner {
-	padding-right: 1px
-	padding-left: 1px
-	width: 970px;
-}
-.container {
-    width: 970px;
+
+
+.btn-primary{
+	border-color: #778899;
+	background-color: #551A8B;
 }
 
 .navbar-inverse{
 	background-color: #551A8B;
 	border-color: #778899;
+}
+
+.carousel-inner{
+	height: 350px;
 }
