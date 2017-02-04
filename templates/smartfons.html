@@ -6,6 +6,8 @@
 {% block inf_gl_s %}
 {% block content %}{% endblock %}
 
+
+
 <div class="container">
 <div class="page-header">
         <h1>Смартфоны</h1>
@@ -19,77 +21,41 @@
         <button type="button" class="btn btn-lg btn-info">Lenovo</button>
         <button type="button" class="btn btn-lg btn-info">OnuPlus</button>
       </p>
+      <div class="page-header"></div>  
 </div>
 
- 
-<div class="page-header"></div>  
- <div class="container marketing" role="form" method="get" action="/smart/">
+<div class="row">
+  <div class="col-lg-offset2 col-lg-4">
+    <form method="GET" class="form-inline" role="form" action="/smart/">
+    <div class="form-group">
+      <label class="sr-only">Название </label><input type="text" class="form-control" name="phone_name" /> 
+    </div>
+      <button type="submit" class="btn btn-success">Искать</button>
+    </form>
+  </div>
+</div> 
+
+ <div class="container marketing">
       
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
    
-        <div class="col-lg-3">
-          <img class="img-thumbnail" src="{{baza3}}" alt="Generic placeholder image">
+        <div class="col-lg-12">
+          {% for smartfon in smartfons %}
+          <div class="pull-left">
+            <img class="img-thumbnail" src="{{smartfon.tovar_image}}" alt="Generic placeholder image">
 
 
-          <h2>{{baza5}}</h2>
-          <p>{{baza4}}</p>
-          <p><a class="btn btn-default" href="#" role="button">Детальнее &raquo;</a></p>
+            <h2>{{smartfon.tovar_name}}</h2>
+            <p>{{smartfon.tovar_info}}</p>
+            <p><a class="btn btn-default" href="#" role="button">Детальнее &raquo;</a></p>
+          </div>
+          {% endfor %}
         </div><!-- /.col-lg-4 -->
       
-        <div class="col-lg-3">
-          <img class="img-thumbnail" src="{{baza6}}" alt="Generic placeholder image">
-          <h2>{{baza8}}</h2>
-          <p>{{baza7}}</p>
-          <p><a class="btn btn-default" href="#" role="button">Детальнее &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-3">
-           <img class="img-thumbnail" src="{{baza9}}" alt="Generic placeholder image">
-          <h2>{{baza11}}</h2>
-          <p>{{baza10}}</p>
-          <p><a class="btn btn-default" href="#" role="button">Детальнее&raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-3">
-          <img class="img-thumbnail" src= "{{ baza2 }}" alt="Generic placeholder image">
-          <h2>{{ baza }}</h2>
-          <p>{{ baza1 }}</p>
-          <p><a class="btn btn-default" href="#" role="button">Детальнее &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
- <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-         <div class="col-lg-3">
-          <img class="img-thumbnail" src= "{{ baza2 }}" alt="Generic placeholder image">
-          <h2>{{ baza }}</h2>
-          <p>{{ baza1 }}</p>
-          <p><a class="btn btn-default" href="#" role="button">Детальнее &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="row">
-         <div class="col-lg-3">
-          <img class="img-thumbnail" src= "{{ baza2 }}" alt="Generic placeholder image">
-          <h2>{{ baza }}</h2>
-          <p>{{ baza1 }}</p>
-          <p><a class="btn btn-default" href="#" role="button">Детальнее &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="row">
-         <div class="col-lg-3">
-          <img class="img-thumbnail" src= "{{ baza2 }}" alt="Generic placeholder image">
-          <h2>{{ baza }}</h2>
-          <p>{{ baza1 }}</p>
-          <p><a class="btn btn-default" href="#" role="button">Детальнее &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="row">
-         <div class="col-lg-3">
-          <img class="img-thumbnail" src= "{{ baza2 }}" alt="Generic placeholder image">
-          <h2>{{ baza }}</h2>
-          <p>{{ baza1 }}</p>
-          <p><a class="btn btn-default" href="#" role="button">Детальнее &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->      
 
 
 {% endblock %}

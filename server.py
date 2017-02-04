@@ -20,19 +20,21 @@ def log1():
 def login():
 		return render_template('login.html',email=request.form.get("email"), password=request.form.get("passwd"))	
 
-@my_flask_app.route('/smart/', methods = ['get'])
+@my_flask_app.route('/smart/', methods = ['GET', 'POST'])
 def category():
+	phone_name = request.args.get('phone_name', False)
+
 	t = Tovar()
-	t1=Tovar_photo()
-	c=t1.query.get(2).tovarphoto_image
-	print(c)
-	a=t.query.get(5).tovar_name
-	b=t.query.get(5).tovar_info
-		
-	return render_template('smartfons.html', baza = a , baza1 = b , baza2 = c , baza3 =  t1.query.get(3).tovarphoto_image, \
-		 baza4 = t1.query.get(3).tovari.tovar_info ,  baza5 = t1.query.get(3).tovari.tovar_name,\
-		 baza6 = t1.query.get(4).tovarphoto_image , baza7 = t1.query.get(4).tovari.tovar_info ,baza8 = t1.query.get(4).tovari.tovar_name,\
-		 baza9 = t1.query.get(5).tovarphoto_image , baza10 = t1.query.get(5).tovari.tovar_info ,baza11 = t1.query.get(5).tovari.tovar_name)
+	
+	smartfons = t.query.filter(Tovar.kategory_id==1)
+
+	if phone_name:
+		qry = '%{}%'.format(phone_name)
+		smartfons = smartfons.filter(Tovar.tovar_name.like(qry))
+
+	smartfons = smartfons.all()
+
+	return render_template('smartfons.html', smartfons=smartfons)
 
 if 	__name__ == "__main__":
 	my_flask_app.run(debug=True)
