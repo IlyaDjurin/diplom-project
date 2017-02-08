@@ -19,9 +19,9 @@ def log1():
 @my_flask_app.route('/login/',methods = ['POST'])
 def login():
 		return render_template('login.html',email=request.form.get("email"), password=request.form.get("passwd"))	
-
-@my_flask_app.route('/smart/', methods = ['GET', 'POST'])
-def category():
+@my_flask_app.route('/smart/')
+@my_flask_app.route('/smart/<username>', methods = ['GET', 'POST'])
+def category(username=None):
 	phone_name = request.args.get('phone_name', False)
 
 	t = Tovar()
@@ -34,7 +34,7 @@ def category():
 
 	smartfons = smartfons.all()
 
-	return render_template('smartfons.html', smartfons=smartfons)
+	return render_template('smartfons.html', smartfons=smartfons, username="sum")
 
 if 	__name__ == "__main__":
 	my_flask_app.run(debug=True)
