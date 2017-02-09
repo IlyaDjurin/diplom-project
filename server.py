@@ -32,9 +32,13 @@ def category(username=None):
 		qry = '%{}%'.format(phone_name)
 		smartfons = smartfons.filter(Tovar.tovar_name.like(qry))
 
+	if username:
+		qry = '%{}%'.format(username)
+		smartfons = smartfons.filter(Tovar.tovar_name.like(qry))	
+
 	smartfons = smartfons.all()
 
-	return render_template('smartfons.html', smartfons=smartfons, username="sum")
+	return render_template('smartfons.html', smartfons=smartfons, username="sam")
 
 if 	__name__ == "__main__":
 	my_flask_app.run(debug=True)
