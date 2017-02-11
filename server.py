@@ -34,11 +34,15 @@ def category(username=None):
 
 	if username:
 		qry = '%{}%'.format(username)
-		smartfons = smartfons.filter(Tovar.tovar_name.like(qry))	
+		smartfons = smartfons.filter(Tovar.tovar_name.like(qry))
+
+
+	
+
 
 	smartfons = smartfons.all()
 
-	return render_template('smartfons.html', smartfons=smartfons, username="sam")
+	return render_template('smartfons.html', smartfons=smartfons, u=request.form.get("cricket"))
 
 if 	__name__ == "__main__":
 	my_flask_app.run(debug=True)

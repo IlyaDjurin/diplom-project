@@ -3,9 +3,8 @@
 {% import "login_menu.html" as container %}
 
 {% block title %}Smart{% endblock %}
-{% block inf_gl_s %}
-{% block content %}{% endblock %}
-
+{% block inf_gl_s %}{% endblock %}
+{% block content %}
 
 
 <div class="container">
@@ -13,26 +12,14 @@
         <h1>Смартфоны</h1>
       </div>
       <p>
-        <form class="form-signin" role="form" method="POST" action="/smart/hone">
-        <button class="btn btn-lg btn-info" type="submit">Apple</button> </form>
-        <form class="form-signin" role="form" method="POST" action="/smart/sam">
-        <button  class="btn btn-lg btn-info" type="submit">Samsung</button> </form>
-        <form class="form-signin" role="form" method="POST" action="/smart/meiz">
-        <button  class="btn btn-lg btn-info" type="submit">Meizu</button>
-        <form class="form-signin" role="form" method="POST" action="/smart/lg">
-        <button  class="btn btn-lg btn-info" type="submit">LG</button>
-        <form class="form-signin" role="form" method="POST" action="/smart/iaom">
-        <button  class="btn btn-lg btn-info" type="submit">Xiaomi</button>
-        <form class="form-signin" role="form" method="POST" action="/smart/novo">
-        <button  class="btn btn-lg btn-info" type="submit">Lenovo</button>
-        <form class="form-signin" role="form" method="POST" action="/smart/lus">
-        <button  class="btn btn-lg btn-info" type="submit">OnePlus</button>
-        </form>
-        </form>
-        </form>
-        </form>
-        </form>
-        
+        <div class="form-signin">
+        <a  href="/smart/hone" class="btn btn-lg btn-info" type="submit">Apple</a>
+        <a  href="/smart/sam" class="btn btn-lg btn-info" type="submit">Samsung</a>
+        <a  href="/smart/meiz" class="btn btn-lg btn-info" type="submit">Meizu</a>
+        <a  href="/smart/lg" class="btn btn-lg btn-info" type="submit">LG</a>
+        <a  href="/smart/iaom" class="btn btn-lg btn-info" type="submit">Xiaomi</a>
+        <a  href="/smart/novo" class="btn btn-lg btn-info" type="submit">Lenovo</a>
+        <a  href="/smart/lus" class="btn btn-lg btn-info" type="submit">OnePlus</a>
       </p>
       <div class="page-header"></div>  
 </div>
@@ -47,14 +34,21 @@
     </form>
   </div>
 </div> 
+<div class="container">
+<div class="row">
+<div class="col-md-12"></div>
+<div class="col-md-3">
+{% include "nav_sidebar.html" %}
+</div> 
 
- <div class="container marketing">
+
+ 
       
 
       <!-- Three columns of text below the carousel -->
-      <div class="row">
+      
    
-        <div class="col-lg-12">
+        <div class="col-md-9">
           {% for smartfon in smartfons %}
           <div class="pull-left">
             <img class="img-thumbnail" src="{{smartfon.tovar_image}}" alt="Generic placeholder image">
@@ -67,8 +61,10 @@
           {% endfor %}
         </div><!-- /.col-lg-4 -->
       
-      </div><!-- /.row -->
+      <!-- /.row -->
 
+</div> 
+</div> 
 
 
 {% endblock %}

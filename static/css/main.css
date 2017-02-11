@@ -1,5 +1,7 @@
 
-
+body {
+  padding-top: 20px;
+}
 
 .btn-primary{
 	border-color: #778899;
@@ -22,3 +24,4 @@
 .pull-left{
 	padding:15px;
 }
+
