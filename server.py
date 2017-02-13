@@ -35,6 +35,11 @@ def category(username=None):
 	if username:
 		qry = '%{}%'.format(username)
 		smartfons = smartfons.filter(Tovar.tovar_name.like(qry))
+	
+	check1 = request.args.get('check1', False)
+
+	if check1:
+		s = "mei"
 
 
 	
