@@ -6,7 +6,7 @@
               <form role="form" method="POST" action="/smart/">
               <label><input type="checkbox" name="vendor" value="cricket"> <a  class="btn" href="/smart/iaom" >Apple</a> </label>
               </form>
-            <li class="active"><a href="#">{{u}}</a></li>
+            <li class="active"><a href="#">Reports</a></li>
             <li><a href="#">Reports</a></li>
             <li><a href="#">Analytics</a></li>
             <li><a href="#">Export</a></li>
@@ -23,16 +23,36 @@
             <li><a href="">One more nav</a></li>
             <li><a href="">Another nav item</a></li>
           </ul>
-        </div>
+        
+        <form class="form-signin" role="form" method="GET" action="/smart/">
         <div class="btn-group-vertical" >
-        <label class="btn" href="/smart/iaom"  >
-          <input type="checkbox"  checked> Xiaomi
+        <label class="checkbox">
+          <input type="checkbox" name="check0" value="Xiaomi" autocomplete="off"> Xiaomi
         </label>
-        <label class="btn">
-            <input type="checkbox" autocomplete="off"> Checkbox 2
+        <label class="checkbox">
+            <input type="checkbox" name="check1" value="Meizu" autocomplete="off"> Meizu
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="check2" value="Samsung" autocomplete="off"> Samsung
+        </label>
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary btn-info">
+          <input type="checkbox" name="checki" value="i" autocomplete="off">Закрепить фильтры
         </label>
         </div>
         </div>
+        <div class="page-header"  style="margin: 15px 0 10px"></div> 
+        <div class="row">
+        <div class="col-md-12"></div>
+        <div class="col-md-3"></div>
+         <div class="col-md-6">
+        <button type="submit" class="btn btn-info" style="padding-left:10px;">Поиск</button>
+        </div>
+        </div>
+        </form>
+      </div>
+      </div>
+       
     
 
 

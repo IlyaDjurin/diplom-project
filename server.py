@@ -36,13 +36,21 @@ def category(username=None):
 		qry = '%{}%'.format(username)
 		smartfons = smartfons.filter(Tovar.tovar_name.like(qry))
 
+	check2 = request.args.get('check2', False)
+	check1 = request.args.get('check1', False)
+	check0 = request.args.get('check0', False)
+	checki = request.args.get('checki', False)
+	if checki:
+		z = [check0,check1,check2]
 
 	
+		smartfons=smartfons.filter(Tovar.tovar_name.in_([z[0],z[1],z[2]]))
 
 
-	smartfons = smartfons.all()
+	smartfons=smartfons.all()
 
-	return render_template('smartfons.html', smartfons=smartfons, u=request.form.get("cricket"))
+
+	return render_template('smartfons.html', smartfons=smartfons)
 
 if 	__name__ == "__main__":
 	my_flask_app.run(debug=True)
