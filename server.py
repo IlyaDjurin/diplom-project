@@ -8,6 +8,10 @@ my_flask_app = Flask(__name__)
 def index():
 	return render_template('index.html')
 
+@my_flask_app.route('/smart/harakter/')
+def harakt():
+	return render_template('harakteriskick.html')	
+
 @my_flask_app.route('/inf/')
 def info():
 	return render_template('info_gl_str.html')
