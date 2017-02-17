@@ -52,12 +52,13 @@
         <div class="col-md-9">
           {% for smartfon in smartfons %}
           <div class="pull-left">
+            <a href="/smart/harakter/">
             <img class="img-thumbnail" src="{{smartfon.tovar_image}}" alt="Generic placeholder image">
-
+            </a>
 
             <h2>{{smartfon.tovar_name}}</h2>
             <p>{{smartfon.tovar_info}}</p>
-            <p><a class="btn btn-default" href="/smart/harakter/" role="button">Детальнее &raquo;</a></p>
+            <p><a class="btn btn-default" href="/smart/harakter/" role="button">Детальнее &raquo;</a> <a class="btn btn-primary" role="button">Купить {{smartfon.tovar_price}} руб </a></p>
           </div>
           {% endfor %}
         </div><!-- /.col-lg-4 -->

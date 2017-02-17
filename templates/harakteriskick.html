@@ -20,4 +20,100 @@
 </div>
 </div>
 
+<div class="container">
+<h2 class="arrow">Мобильный телефон Apple iPhone 6 16GB Space Gray</h2>
+<div class="row">
+		<div class="col-md-12"></div>
+        <div class="col-md-4">
+
+<div class="item" style="height: 300px;">
+					<img src="/static/img/iphone6/1.jpg" alt="Alt">
+					<img src="/static/img/iphone6/4.jpg" alt="Alt">
+					<img src="/static/img/iphone6/3.jpg" alt="Alt">
+					
+					
+				</div>
+</div>
+<div class="col-md-8">
+    <a href="#" class="thumbnail" style= "height: 60px; ">
+      <img src="/static/img/14.jpg/" alt="Alt">
+    </a>
+  </div>
+
+ <div class="col-md-3 col-md-offset-3">
+  <h2>35000р</h2>
+
+  <p><a class="btn btn-primary btn-lg" role="button" href="#">Купить</a></p>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="container">
+
+
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Описание</a></li>
+    <li><a href="#tab2" data-toggle="tab">Характеристики</a></li>
+    <li><a href="#tab3" data-toggle="tab">Отзывы</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <p>
+    {% include "opisanie_iphone6.html" %}
+      </p>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <p>
+      	<div class="col-md-12"></div>
+        <div class="col-md-6">
+      	 <h2 class="sub-header">Характеристики</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              {% for i in harackter %}
+                <tr>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Диагональ экрана</td>
+                  <td>{{i.tovarinphoto_diagon}}</td>
+                </tr>
+                <tr>
+                  <td>Оперативная память</td>
+                  <td>{{i.tovarinphoto_ram}} Гб</td>
+                </tr>
+                <tr>
+                  <td>Память ПЗУ</td>
+                  <td>16 Гб</td>
+                </tr>
+                <tr>
+                  <td>Емкость АКБ</td>
+                  <td>{{i.tovarinphoto_akb}} мА·ч</td>
+                </tr>
+               </tbody>
+               </table>
+               </div>
+              </div>
+             
+          {% endfor %}
+             
+
+      </p>
+    </div>
+    <div class="tab-pane" id="tab3">
+      <h2>Пока нет ни одного отзыва.</h2>
+    </div>
+  </div>
+</div>
+</div>
+
+
 {% endblock %}

@@ -1,5 +1,5 @@
 from flask import Flask , render_template, request
-from db_magazina import Kategor, Tovar, Tovar_photo
+from db_magazina import Kategor, Tovar, Tovar_photo, Tovar_inphoto
 
 
 my_flask_app = Flask(__name__)
@@ -10,7 +10,10 @@ def index():
 
 @my_flask_app.route('/smart/harakter/')
 def harakt():
-	return render_template('harakteriskick.html')	
+	t1= Tovar_inphoto()
+	harackter = Tovar_inphoto.query.filter(Tovar_inphoto.id==1).all()
+
+	return render_template('harakteriskick.html' ,  harackter=harackter)	
 
 @my_flask_app.route('/inf/')
 def info():
@@ -29,7 +32,7 @@ def category(username=None):
 	phone_name = request.args.get('phone_name', False)
 
 	t = Tovar()
-	
+
 	smartfons = t.query.filter(Tovar.kategory_id==1)
 
 	if phone_name:
@@ -40,10 +43,7 @@ def category(username=None):
 		qry = '%{}%'.format(username)
 		smartfons = smartfons.filter(Tovar.tovar_name.like(qry))
 	
-	check1 = request.args.get('check1', False)
-
-	if check1:
-		s = "mei"
+	
 
 	check2 = request.args.get('check2', False)
 	check1 = request.args.get('check1', False)
