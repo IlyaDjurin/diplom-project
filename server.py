@@ -34,7 +34,7 @@ def category(username=None):
 	t = Tovar()
 
 	smartfons = t.query.filter(Tovar.kategory_id==1)
-
+	harackter = Tovar_inphoto.query.filter(Tovar_inphoto.id==1).all()
 	if phone_name:
 		qry = '%{}%'.format(phone_name)
 		smartfons = smartfons.filter(Tovar.tovar_name.like(qry))
@@ -45,16 +45,20 @@ def category(username=None):
 	
 	
 
+	check5 = request.args.get('check5', False)
+	check4 = request.args.get('check4', False)	
+	check3 = request.args.get('check3', False)	
 	check2 = request.args.get('check2', False)
 	check1 = request.args.get('check1', False)
 	check0 = request.args.get('check0', False)
 	checki = request.args.get('checki', False)
 	if checki:
-		z = [check0,check1,check2]
+		z = [check0,check1,check2,check3,check4,check5]
 
 	
 		smartfons=smartfons.filter(Tovar.tovar_name.in_([z[0],z[1],z[2]]))
-
+		harackter = Tovar_inphoto.query.filter(Tovar_inphoto.tovarinphoto_diagon.in_([z[3],z[4],z[5]])).all()
+		print(harackter)	
 
 	smartfons=smartfons.all()
 

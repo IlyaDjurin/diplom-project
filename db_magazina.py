@@ -35,15 +35,17 @@ class Tovar(Base):
     tovar_made = Column(String(70))
     tovar_price = Column(Integer)
     kategory_id = Column(Integer, ForeignKey('kategorii.id'))
+    tovar_url = Column(String(70))
     tovars = relationship('Tovar_inphoto', backref='tovari')
 
-    def __init__(self, tovar_name=None, tovar_info=None, tovar_image=None,tovar_made=None,tovar_price=None,kategory_id = None):
+    def __init__(self, tovar_name=None, tovar_info=None, tovar_image=None,tovar_made=None,tovar_price=None,kategory_id = None,tovar_url=None):
         self.tovar_name = tovar_name
         self.tovar_info = tovar_info
         self.tovar_image = tovar_image
         self.tovar_made = tovar_made
         self.tovar_price = tovar_price
         self.kategory_id = kategory_id
+        self.tovar_url = tovar_url
 
     def __repr__(self):
         return '<Tovar {} {}>'.format(self.tovar_name, self.tovar_info)

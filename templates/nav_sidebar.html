@@ -1,29 +1,18 @@
  
       <div class="row">
-        <div class="col-lg-8 sidebar">
-          <ul class="nav nav-sidebar">
-      
-              <form role="form" method="POST" action="/smart/">
-              <label><input type="checkbox" name="vendor" value="cricket"> <a  class="btn" href="/smart/iaom" >Apple</a> </label>
-              </form>
-            <li class="active"><a href="#">Reports</a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-          </ul>
-        
+        <div class="col-lg-9 sidebar">
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  Производитель
+                  </a>
+                </h4>
+        </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+
         <form class="form-signin" role="form" method="GET" action="/smart/">
         <div class="btn-group-vertical" >
         <label class="checkbox">
@@ -35,11 +24,44 @@
         <label class="checkbox">
             <input type="checkbox" name="check2" value="Samsung" autocomplete="off"> Samsung
         </label>
+        </div>
+         </div>
+         </div>
+
+         <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                Диагональ экрана
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+
+              <div class="btn-group-vertical" >
+        <label class="checkbox">
+          <input type="checkbox" name="check3" value="4" autocomplete="off"> 4"
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="check4" value="5" autocomplete="off"> 5"
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="check5" value="5,5" autocomplete="off"> 5,5"
+        </label>
+        </div>
+
+
+
+            </div>
+         </div>
+         </div>
+
+
         <div class="btn-group" data-toggle="buttons">
           <label class="btn btn-primary btn-info">
           <input type="checkbox" name="checki" value="i" autocomplete="off">Закрепить фильтры
         </label>
-        </div>
         </div>
         <div class="page-header"  style="margin: 15px 0 10px"></div> 
         <div class="row">
@@ -52,8 +74,11 @@
         </form>
       </div>
       </div>
-       
-    
+      </div>
+    </div> 
+
+   
+  
 
 
 
