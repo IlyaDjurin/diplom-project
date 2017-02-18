@@ -44,7 +44,7 @@ def category(username=None):
 		smartfons = smartfons.filter(Tovar.tovar_name.like(qry))
 	
 	
-
+	check6 = request.args.get('check6', False)	
 	check5 = request.args.get('check5', False)
 	check4 = request.args.get('check4', False)	
 	check3 = request.args.get('check3', False)	
@@ -53,14 +53,18 @@ def category(username=None):
 	check0 = request.args.get('check0', False)
 	checki = request.args.get('checki', False)
 	if checki:
-		z = [check0,check1,check2,check3,check4,check5]
+		z = [check0,check1,check2,check3,check4,check5,check6]
 
 	
-		smartfons=smartfons.filter(Tovar.tovar_name.in_([z[0],z[1],z[2]]))
-		harackter = Tovar_inphoto.query.filter(Tovar_inphoto.tovarinphoto_diagon.in_([z[3],z[4],z[5]])).all()
-		print(harackter)	
-
-	smartfons=smartfons.all()
+		smartfons=smartfons.filter(Tovar.tovar_name.in_([z[0],z[1],z[2],z[6]]))
+		try:
+			smartfons= Tovar.query.filter(Tovar.id.in_([Tovar_inphoto.query.filter(Tovar_inphoto.tovarinphoto_diagon.in_([z[3],z[4],z[5]])).all()[0].tovar_id]))
+		except IndexError:
+			pass
+		print(smartfons)
+			
+		smartfons=smartfons.all()
+	
 
 
 	return render_template('smartfons.html', smartfons=smartfons)
