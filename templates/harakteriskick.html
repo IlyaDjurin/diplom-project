@@ -2,7 +2,7 @@
 {% block title %}Login{% endblock %}
 {% block inf_gl_s %}{% endblock %}
 {% block content %}
-
+{% for i in harackter %}
 <div class="container">
             <div class="page_inner">                
 <ul class="breadcrumb">
@@ -27,9 +27,9 @@
         <div class="col-md-4">
 
 <div class="item" style="height: 300px;">
-					<img src="/static/img/iphone6/1.jpg" alt="Alt">
-					<img src="/static/img/iphone6/4.jpg" alt="Alt">
-					<img src="/static/img/iphone6/3.jpg" alt="Alt">
+					<img src="{{i.tovarim[0].tovar_image}}" alt="Alt">
+					<img src="{{i.tovarim[3].tovar_image}}" alt="Alt">
+					<img src="{{i.tovarim[2].tovar_image}}" alt="Alt">
 					
 					
 				</div>
@@ -75,7 +75,7 @@
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
-              {% for i in harackter %}
+              
                 <tr>
                   <th></th>
                   <th></th>

@@ -106,13 +106,13 @@ class Tovar_img(Base):
     tovar_image = Column(String(120))
     tovarinphoto_id = Column(Integer, ForeignKey('tovarinphoto.id'))
 
-    def __init__(self, tovar_name=None,tovar_image=None,kategory_id = None):
+    def __init__(self, tovar_name=None,tovar_image=None,tovarinphoto_id = None):
         self.tovar_name = tovar_name
         self.tovar_image = tovar_image
         self.tovarinphoto_id = tovarinphoto_id
 
     def __repr__(self):
-        return '<Tovar_img {} {}>'.format(self.tovar_name, self.tovar_info)
+        return '<Tovar_img {}>'.format(self.tovar_name)
 
 
 class Tovar_photo(Base):
