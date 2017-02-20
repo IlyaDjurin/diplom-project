@@ -43,7 +43,10 @@ def category(username=None):
 		qry = '%{}%'.format(username)
 		smartfons = smartfons.filter(Tovar.tovar_name.like(qry))
 	
-	
+
+	check9 = request.args.get('check9', False)	
+	check8 = request.args.get('check8', False)
+	check7 = request.args.get('check7', False)
 	check6 = request.args.get('check6', False)	
 	check5 = request.args.get('check5', False)
 	check4 = request.args.get('check4', False)	
@@ -53,14 +56,23 @@ def category(username=None):
 	check0 = request.args.get('check0', False)
 	checki = request.args.get('checki', False)
 	if checki:
-		z = [check0,check1,check2,check3,check4,check5,check6]
+		z = [check0,check1,check2,check3,check4,check5,check6,check7,check8,check9]
 
 	
 		smartfons=smartfons.filter(Tovar.tovar_name.in_([z[0],z[1],z[2],z[6]]))
 		try:
 			smartfons= Tovar.query.filter(Tovar.id.in_([Tovar_inphoto.query.filter(Tovar_inphoto.tovarinphoto_diagon.in_([z[3],z[4],z[5]])).all()[0].tovar_id]))
+			
 		except IndexError:
 			pass
+
+		try:
+			a = Tovar_inphoto.query.filter(Tovar_inphoto.tovarinphoto_ram.in_([z[7],z[8],z[9]])).all()
+			for i in a:
+				smartfons= Tovar.query.filter(Tovar.id.in_([i.tovar_id]))
+				#smartfons= Tovar.query.filter(Tovar.id.in_([a[0].tovar_id , a[1].tovar_id]))
+		except IndexError:
+			pass		
 		print(smartfons)
 			
 		smartfons=smartfons.all()
